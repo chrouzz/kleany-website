@@ -15,11 +15,11 @@ Open `index.html` in a browser. No build step required.
 
 ## Deployment
 
-Hosted via GitHub Pages with a custom domain (`kleany.com`) registered on GoDaddy.
+Hosted via GitHub Pages with a custom domain (`kleany.com`).
 
-### DNS Setup (GoDaddy)
+### DNS Setup
 
-Add these records for `kleany.com`:
+Add these DNS records for `kleany.com`:
 
 | Type  | Name | Value                  |
 |-------|------|------------------------|
