@@ -394,6 +394,159 @@
             margin-top: 4px;
         }
 
+        /* REVIEWS */
+        .reviews {
+            background: var(--color-light);
+            overflow: hidden;
+        }
+
+        .reviews-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 48px;
+        }
+
+        .reviews-rating {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 12px;
+        }
+
+        .reviews-stars {
+            color: #e8a517;
+            font-size: 1.1rem;
+            letter-spacing: 2px;
+        }
+
+        .reviews-score {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--color-dark);
+        }
+
+        .reviews-count {
+            font-size: 0.85rem;
+            color: var(--color-muted);
+        }
+
+        .reviews-nav {
+            display: flex;
+            gap: 8px;
+        }
+
+        .reviews-nav button {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            border: 1px solid var(--color-border);
+            background: var(--color-white);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s, border-color 0.2s;
+        }
+
+        .reviews-nav button:hover {
+            background: var(--color-dark);
+            border-color: var(--color-dark);
+        }
+
+        .reviews-nav button:hover svg {
+            stroke: var(--color-white);
+        }
+
+        .reviews-track-wrap {
+            overflow: hidden;
+        }
+
+        .reviews-track {
+            display: flex;
+            gap: 24px;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+            scroll-snap-type: x mandatory;
+        }
+
+        .reviews-track::-webkit-scrollbar {
+            display: none;
+        }
+
+        .review-card {
+            flex: 0 0 340px;
+            background: var(--color-white);
+            border-radius: 12px;
+            padding: 28px;
+            scroll-snap-align: start;
+        }
+
+        .review-card-stars {
+            color: #e8a517;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            margin-bottom: 14px;
+        }
+
+        .review-card-title {
+            font-weight: 600;
+            font-size: 1rem;
+            color: var(--color-dark);
+            margin-bottom: 10px;
+        }
+
+        .review-card-text {
+            font-size: 0.9rem;
+            color: var(--color-muted);
+            line-height: 1.6;
+            margin-bottom: 18px;
+        }
+
+        .review-card-author {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .review-card-avatar {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: var(--color-accent-light);
+            color: var(--color-accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .review-card-name {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--color-dark);
+        }
+
+        .review-card-badge {
+            font-size: 0.75rem;
+            color: var(--color-accent);
+        }
+
+        @media (max-width: 768px) {
+            .reviews-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 20px;
+            }
+
+            .review-card {
+                flex: 0 0 280px;
+            }
+        }
+
         /* ABOUT / MISSION */
         .mission {
             background: var(--color-light);
@@ -728,6 +881,107 @@
         </div>
     </section>
 
+    <!-- REVIEWS -->
+    <section class="reviews" id="reviews">
+        <div class="section-inner">
+            <div class="reviews-header">
+                <div>
+                    <p class="section-label">Customer Reviews</p>
+                    <h2 class="section-title">What people are saying</h2>
+                    <div class="reviews-rating">
+                        <span class="reviews-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                        <span class="reviews-score">4.8 / 5</span>
+                        <span class="reviews-count">&mdash; based on Amazon reviews</span>
+                    </div>
+                </div>
+                <div class="reviews-nav">
+                    <button aria-label="Previous reviews" onclick="document.querySelector('.reviews-track').scrollBy({left:-364,behavior:'smooth'})">
+                        <svg width="18" height="18" fill="none" stroke="#1a1a1a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+                    </button>
+                    <button aria-label="Next reviews" onclick="document.querySelector('.reviews-track').scrollBy({left:364,behavior:'smooth'})">
+                        <svg width="18" height="18" fill="none" stroke="#1a1a1a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="9 6 15 12 9 18"/></svg>
+                    </button>
+                </div>
+            </div>
+            <div class="reviews-track-wrap">
+                <div class="reviews-track">
+                    <div class="review-card">
+                        <div class="review-card-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        <p class="review-card-title">A total game-changer</p>
+                        <p class="review-card-text">When you're out and about, these compressed Kleany towels are a game-changer. Just add water and watch these tiny tablets expand into full-sized wipes. I keep them in my purse, car, and travel bag.</p>
+                        <div class="review-card-author">
+                            <div class="review-card-avatar">S</div>
+                            <div>
+                                <div class="review-card-name">Sarah M.</div>
+                                <div class="review-card-badge">Verified Purchase</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-card-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        <p class="review-card-title">Surprisingly strong and reusable</p>
+                        <p class="review-card-text">The towels are surprisingly strong and can be reused multiple times for light uses. I used the same towel about 3 times to wipe bathroom countertops and it held up really well. Great quality.</p>
+                        <div class="review-card-author">
+                            <div class="review-card-avatar">J</div>
+                            <div>
+                                <div class="review-card-name">Jessica L.</div>
+                                <div class="review-card-badge">Verified Purchase</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-card-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        <p class="review-card-title">Super absorbent and great size</p>
+                        <p class="review-card-text">The towels are a good size and super absorbent. Hypoallergenic and fragrance-free &mdash; gentle on the skin and tough on grime, plus they're biodegradable. Definitely restocking.</p>
+                        <div class="review-card-author">
+                            <div class="review-card-avatar">M</div>
+                            <div>
+                                <div class="review-card-name">Mike R.</div>
+                                <div class="review-card-badge">Verified Purchase</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-card-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        <p class="review-card-title">Perfect for camping trips</p>
+                        <p class="review-card-text">Took these on a week-long hiking trip and they were a lifesaver. So compact and lightweight, they barely took any space in my pack. The travel tubes are a really nice touch too.</p>
+                        <div class="review-card-author">
+                            <div class="review-card-avatar">D</div>
+                            <div>
+                                <div class="review-card-name">David K.</div>
+                                <div class="review-card-badge">Verified Purchase</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-card-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        <p class="review-card-title">Great for makeup removal</p>
+                        <p class="review-card-text">I use these every night to remove my makeup and they work wonderfully. So soft on my sensitive skin, no irritation at all. Love that they're chemical-free and biodegradable.</p>
+                        <div class="review-card-author">
+                            <div class="review-card-avatar">A</div>
+                            <div>
+                                <div class="review-card-name">Amanda T.</div>
+                                <div class="review-card-badge">Verified Purchase</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-card-stars">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
+                        <p class="review-card-title">Handy and practical</p>
+                        <p class="review-card-text">Very practical product. I use them for cleaning my baby's hands and face when we're out. They're gentle and unscented which is exactly what I was looking for. Will buy again.</p>
+                        <div class="review-card-author">
+                            <div class="review-card-avatar">L</div>
+                            <div>
+                                <div class="review-card-name">Laura B.</div>
+                                <div class="review-card-badge">Verified Purchase</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- MISSION -->
     <section class="mission" id="mission">
         <div class="section-inner">
@@ -760,6 +1014,7 @@
                 <li><a href="#features">Features</a></li>
                 <li><a href="#product">Product</a></li>
                 <li><a href="#how">How It Works</a></li>
+                <li><a href="#reviews">Reviews</a></li>
                 <li><a href="#mission">Our Mission</a></li>
                 <li><a href="https://www.amazon.com/dp/B0CY9W4B5B" target="_blank" rel="noopener">Amazon Store</a></li>
             </ul>
